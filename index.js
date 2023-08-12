@@ -37,33 +37,47 @@ app.post("/", async (req, res) => {
 
 app.get("/", (req, res) => {
   res.status(200).send(`
-    <html>
-      <head>
-        <title>Tiktok_Signature</title>
-        <style>
-          body {
-            background-color: #f2f2f2;
-            font-family: Arial, sans-serif;
-            text-align: center;
-          }
-          h1 {
-            color: #333;
-            font-size: 3rem;
-            margin-top: 3rem;
-          }
-          p {
-            color: #666;
-            font-size: 1.5rem;
-            margin-top: 1.5rem;
-          }
-        </style>
-      </head>
-      <body>
-        <h1>Tiktok_Signature</h1>
-        <p>自动生成抖音 xbogus、mstoken 和 ttwid</p>
-        <p>使用方法：<a href="https://github.com/5ime/Tiktok_Signature" target="_blank">https://github.com/5ime/Tiktok_Signature</a></p>
-      </body>
-    </html>
+<html>
+  <head>
+    <title>抖音X-Bogus校验 (Tiktok_Signature)</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      h1 {
+        color: #333;
+        font-size: 3rem;
+        margin-top: 3rem;
+      }
+      p {
+        color: #666;
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1> 抖音X-Bogus校验 (Tiktok_Signature) </h1>
+    <p>自动生成抖音 xbogus、mstoken 和 ttwid</p>
+    <p>使用方法：<a href="https://github.com/tdouguo/Tiktok_Signature" target="_blank">https://github.com/tdouguo/Tiktok_Signature</a></p>
+    <p>接口使用方法：
+      <ol>
+        <li>发送一个 POST 请求到你的 https://x-bogus.onf.cc。</li>
+        <li>在请求的 Header 中，设置 Content-Type 为 application/json。</li>
+        <li>在请求的 Body 中，包含一个 JSON 对象，该对象应包含 'url' 和 'userAgent' 属性。例如：<br/>
+          {<br/>
+            "url": "https://www.douyin.com/aweme/v1/web/aweme/detail/?aweme_id=YOUR_ID&aid=1128&version_name=23.5.0&device_platform=android&os_version=2333",<br/>
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"<br/>
+          }<br/>
+          请将 "YOUR_ID" 替换为实际的 ID。
+        </li>
+        <li>发送请求，你将在响应中收到 xbogus、mstoken 和 ttwid。</li>
+      </ol>
+    </p>
+  </body>
+</html>
   `);
 });
 
